@@ -21,15 +21,13 @@ void  Randimage(vector<Mat>& vectorMat)
 		int a = rand() % 8;
 		swap(vectorMat[i], vectorMat[a]);
 		
-		if (i == 6)
-		{
-			Sp = Mat::zeros(vectorMat[a].rows, vectorMat[a].cols, vectorMat[a].type());
-			addWeighted(vectorMat[a], 0, Sp, 1, 0, vectorMat[a]);
-			p = a;
-		}
-
 		
 	}
+	int a1 = rand() % 8;
+	Sp = Mat::zeros(vectorMat[a1].rows, vectorMat[a1].cols, vectorMat[a1].type());
+	addWeighted(vectorMat[a1], 0, Sp, 1, 0, vectorMat[a1]);
+	p = a1;
+	cout << p;
 
 }
 
@@ -150,7 +148,7 @@ int main(int argc, char*argv[])
 		{
 			a_num[i][j] = i0++;
 			b[i][j] = 1;
-			if (a_num[i][j]==p+1)
+			if (a_num[i][j]==p)
 				b[i][j] = 0;
 
 		}
